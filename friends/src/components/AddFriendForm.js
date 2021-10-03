@@ -53,7 +53,6 @@ const AddFriendForm = () => {
                 value={formValues.email}
                 onChange={handleChanges} />
             <button>Add Friend</button>
-           
         </form>
     </div>)
 }

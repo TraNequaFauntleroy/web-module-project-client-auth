@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 
 import './App.css';
@@ -11,8 +11,6 @@ function App() {
     <Router>
       <div className="App">
         <h1>Hello Buddies!</h1>
-        <Link to='/friends/add-new' style={{marginRight: '16px'}}>Add Buddy</Link>
-        <Link to='/friends/'>See Buddies</Link>
       <Switch>
 
         <PrivateRoute path='/friends/add-new' component={AddFriendForm}/> 

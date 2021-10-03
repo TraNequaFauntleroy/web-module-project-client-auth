@@ -38,14 +38,14 @@ const Login = () => {
                 <input id='username'
                 name='username' 
                 values={formValues.username} 
-                onClick={handleChanges}/>
+                onChange={handleChanges}/>
                 
             <label htmlFor='password'>Password</label>
                 <input id='password' 
                 name='password' 
                 type='password'
                 values={formValues.password} 
-                onClick={handleChanges}/>
+                onChange={handleChanges}/>
             <button>Login</button>
         </form>
     )
