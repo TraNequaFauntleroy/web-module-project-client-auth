@@ -6,10 +6,8 @@ import App from './App';
 
 const theme = 
  {
-
-  // primaryColor: rgb(210, 196, 170),
-  secondaryColor: "#7f5539",
-  accentColor: "#3C6E71",
+  primaryColor: "#7f5539",
+  secondaryColor: "#3C6E71",
   black: "#353535",
   white: "FFFFFF",
 };

@@ -20,9 +20,7 @@ const StyledFriendsList = styled.div `
         display: block;
         margin: 4% auto;
     }
-
 `
-
 
 const FriendsList = (props) => {
     const [friends, setFriends] = useState([]);
@@ -46,7 +44,7 @@ const FriendsList = (props) => {
                 friends.map(friend =>(
                 <p key={friend.id}>{friend.name}</p>))
                 }
-                <Link to='/friends/add-new'><button>Add Buddy</button></Link>
+                <Link to='/friends/add-new'><button>Add Someone</button></Link>
              </div>
         </StyledFriendsList>
     )

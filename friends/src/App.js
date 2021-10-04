@@ -15,6 +15,9 @@ function App() {
       <div className="App">
         <ul>
           <li>
+            {!isLoggedIn ? <Link to="/login">Login</Link> : <div></div>}
+          </li>
+          <li>
             {isLoggedIn && <Link to="/friends">Attendees</Link>}
           </li>
           <li>
@@ -22,11 +25,11 @@ function App() {
           </li>
         </ul>
       <Switch>
-        <PrivateRoute exact path='/friends' component={FriendsList}/>
         <PrivateRoute path='/friends/add-new' component={AddFriendForm}/> 
-        <Route path="/logout" component={Logout} />
-        <Route path="/login" component={Login} />
+        <PrivateRoute path='/friends' component={FriendsList}/>
         <Route path="/" component={Login} />    
+        <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
       </Switch>
       </div>
     </Router>
