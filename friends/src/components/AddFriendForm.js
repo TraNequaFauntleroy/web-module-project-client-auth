@@ -1,6 +1,26 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { axiosWithAuth } from "../utils/AxiosWithAuth";
+import axiosWithAuth  from "../utils/axiosWithAuth";
+import styled from "styled-components";
+
+
+const StyledForm = styled.div`
+label {
+    display: block;
+    margin-bottom: 2%;
+}
+button {
+    display: block;
+    margin: 0 auto;
+    color: #7f5539;
+    background-color: #ffe8d6;
+    display: block;
+    margin: 4% auto;
+
+}
+
+
+`
 
 const initialValues = {
     name: '',
@@ -31,30 +51,30 @@ const AddFriendForm = () => {
             })
 
     }
-    return (<div>
-        <h3>Add New Friend</h3>
+    return (<StyledForm>
+        <h3>Add New Attendee</h3>
         <form onSubmit={handleSubmit}>
-            <label htmlFor='name'>Name</label>
+            <label htmlFor='name'>Name:</label>
                 <input
                 id='name'
                 name='name'
                 value={formValues.name}
                 onChange={handleChanges} />
-            <label htmlFor='age'>Age</label>
+            <label htmlFor='age'>Age:</label>
                 <input
                 id='age'
                 name='age'
                 value={formValues.age}
                 onChange={handleChanges} />
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email'>Email:</label>
                 <input
                 id='email'
                 name='email'
                 value={formValues.email}
                 onChange={handleChanges} />
-            <button>Add Friend</button>
+            <button>Add Attendee</button>
         </form>
-    </div>)
+    </StyledForm>)
 }
 
 export default AddFriendForm;
