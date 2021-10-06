@@ -12,7 +12,7 @@ const Logout = (props)=> {
             .catch(err => {
                 console.log(err)
             })
-    },[])
+    }, [])
 
     return(<div></div>);
 }

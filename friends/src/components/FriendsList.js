@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import styled from 'styled-components'
 
-
 const StyledFriendsList = styled.div `
-   flex-direction: column;
+    flex-direction: column;
     display: flex;
   .list {
     flex-direction: column;
@@ -27,7 +26,7 @@ const FriendsList = (props) => {
 
     useEffect( () => {
         axiosWithAuth()
-            .get('/api/friends')
+            .get('/friends')
             .then(res => {
                 setFriends(res.data)
             })

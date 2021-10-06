@@ -27,13 +27,12 @@ function App() {
       <Switch>
         <PrivateRoute path='/friends/add-new' component={AddFriendForm}/> 
         <PrivateRoute path='/friends' component={FriendsList}/>
-        <Route path="/" component={Login} />    
+        <Route exact path="/" component={Login} />    
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
       </Switch>
       </div>
     </Router>
-    
   );
 }
 

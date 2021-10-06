@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosWithAuth from '../utils/axiosWithAuth';
 import styled from 'styled-components'
 import React, { useState } from "react";
 import { useHistory } from "react-router";
@@ -10,41 +10,30 @@ const initialValues = {
 
 const StyledLogin = styled.div`
     color: #7f5539;
-
     h1 {
         color: #ffe8d6 ;
     }
-
     label {
-        /* display: block; */
         margin: 0 auto;
     }
-
     form {
-        /* background-color: #7f5539; */
         margin-top: 10%;
         color: #ffe8d6
     }
-
-
     button {
         color: #7f5539;
         background-color: #ffe8d6;
         display: block;
         margin: 4% auto;
-       
     }
-
     input {
         margin-right: 5%;
     }
 `
 
 const Login = () => {
-
     const [formValues, setFormValues] = useState(initialValues);
     const { push } = useHistory()
-
 
     const handleChanges = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -52,8 +41,8 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        axios
-            .post('http://localhost:5000/api/login', formValues)
+        axiosWithAuth()
+            .post('/login', formValues)
             .then(res => {
                 window.localStorage.setItem('token', res.data.payload)
                 push('/friends')

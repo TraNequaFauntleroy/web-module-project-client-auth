@@ -3,7 +3,6 @@ import { useHistory } from "react-router";
 import axiosWithAuth  from "../utils/axiosWithAuth";
 import styled from "styled-components";
 
-
 const StyledForm = styled.div`
 label {
     display: block;
@@ -16,11 +15,7 @@ button {
     background-color: #ffe8d6;
     display: block;
     margin: 4% auto;
-
-}
-
-
-`
+}`
 
 const initialValues = {
     name: '',
@@ -42,15 +37,15 @@ const AddFriendForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
-            .post('/api/friends', formValues)
+            .post('/friends', formValues)
             .then(res => {
                 push('/friends')
             })
             .catch(err => {
                 console.log({err: err})
             })
-
     }
+
     return (<StyledForm>
         <h3>Add New Attendee</h3>
         <form onSubmit={handleSubmit}>
@@ -60,12 +55,14 @@ const AddFriendForm = () => {
                 name='name'
                 value={formValues.name}
                 onChange={handleChanges} />
+
             <label htmlFor='age'>Age:</label>
                 <input
                 id='age'
                 name='age'
                 value={formValues.age}
                 onChange={handleChanges} />
+
             <label htmlFor='email'>Email:</label>
                 <input
                 id='email'
@@ -78,3 +75,4 @@ const AddFriendForm = () => {
 }
 
 export default AddFriendForm;
+
